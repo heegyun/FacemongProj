@@ -7,7 +7,7 @@ class CustomerAdd extends React.Component{
         super(props);
         this.state = {
             file : null, 
-            userName : "",
+            breed : "",
             birthday : "",
             gender : "",
             age : "",
@@ -21,19 +21,18 @@ class CustomerAdd extends React.Component{
         this.addCustomer()
         .then((response)=>{
             console.log(response.data);
+            this.props.stateRefresh();
         })
 
         this.setState({
             file:null,
-            userName : "",
+            breed : "",
             birthday : "",
             gender : "",
             age : "",
             fileName : "" 
         })
-        
-        window.location.reload();
-
+       
     }
 
     handleFileChange  = (e) =>{
@@ -55,7 +54,7 @@ class CustomerAdd extends React.Component{
         const url = '/api/customers';
         const formData = new FormData();
         formData.append('image', this.state.file);
-        formData.append('name', this.state.userName);
+        formData.append('breed', this.state.breed);
         formData.append('birthday', this.state.birthday);
         formData.append('gender', this.state.gender);
         formData.append('age', this.state.age);
@@ -75,7 +74,7 @@ class CustomerAdd extends React.Component{
             <form onSubmit = {this.handleFormSubmit}>
                 <h1>고객 추가</h1>
                 프로필 이미지: <input type="file" name = "file" file = {this.state.file} value ={this.state.fileName} onChange = {this.handleFileChange}/><br/>
-                이름: <input type="text" name = "userName" value ={this.state.userName} onChange = {this.handleValueChange}/><br/>
+                품종명: <input type="text" name = "breed" value ={this.state.breed} onChange = {this.handleValueChange}/><br/>
                 생년월일: <input type="text" name = "birthday" value={this.state.birthday} onChange = {this.handleValueChange}/><br/>
                 성별: <input type = "text" name = "gender" value = {this.state.gender} onChange = {this.handleValueChange}/><br/>
                 나이: <input type = "text" name = "age" value = {this.state.age} onChange = {this.handleValueChange}/><br/>

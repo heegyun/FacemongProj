@@ -44,7 +44,7 @@ app.post('/api/customers', upload.single('image'), (req,res)=>{
   let gender = req.body.gender;
   let age = req.body.age;
   
-  let params = [image,breed,name,size,gender,age];
+  let params = [image.breed.name.size.gender.age];
   connection.query(sql,params,
     (err,rows, fields)=>{
       res.send(rows);

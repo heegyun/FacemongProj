@@ -76,15 +76,17 @@ class App extends Component {
               <TableCell>번호</TableCell>
               <TableCell>이미지</TableCell>
               <TableCell>품종</TableCell>
-              <TableCell>생년월일</TableCell>
+              <TableCell>이름</TableCell>
+              <TableCell>크기</TableCell>
               <TableCell>성별</TableCell>
               <TableCell>나이</TableCell>
+              <TableCell>설정</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             { 
             this.state.customers ? this.state.customers.map(c =>{
-              return(<Customer key = {c.id} id= {c.id} image = {c.image} breed = {c.breed} birthday = {c.birthday} gender = {c.gender} age = {c.age}
+              return(<Customer stateRefresh={this.stateRefresh}key = {c.id} id= {c.id} image = {c.image} breed = {c.breed} name = {c.name} size = {c.size} gender = {c.gender} age = {c.age}
               />);
             }) : 
             <TableRow>

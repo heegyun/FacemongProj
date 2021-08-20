@@ -72,7 +72,7 @@ class CustomerAdd extends React.Component{
         const formData = new FormData();
         formData.append('image', this.state.file);
         formData.append('breed', this.state.breed);
-        formData.append('name', this.state.birthday);
+        formData.append('name', this.state.name);
         formData.append('size', this.state.size);
         formData.append('gender', this.state.gender);
         formData.append('age', this.state.age);
@@ -118,7 +118,7 @@ class CustomerAdd extends React.Component{
                         <input className = {classes.hidden} accept = "image/*" id = "raised-button-file"type="file" file = {this.state.file} value ={this.state.fileName} onChange = {this.handleFileChange}/><br/>
                         <label htmlFor = "raised-button-file">
                             <Button variant = "contained" color = "primary" component="span" name = "file">
-                                {this.state.fileName == "" ? "프로필 이미지 선택" : this.state.fileName}
+                                {this.state.fileName === "" ? "프로필 이미지 선택" : this.state.fileName}
                             </Button>
                         </label>
                         <br/>

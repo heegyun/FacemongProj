@@ -33,18 +33,18 @@ app.get('/api/customers',(req, res)=>{
     );
 });
 
-app.use('./image',express.static('./upload'));
+app.use('/image',express.static('./upload'));
 
 app.post('/api/customers', upload.single('image'), (req,res)=>{
   let sql = 'INSERT INTO customer VALUES (null,?,?,?,?,?,?,now(),0)';
-  let image = './image/' + req.file.filename;
+  let image = '/image/' + req.file.filename;
   let breed = req.body.breed;
   let name = req.body.name;
   let size = req.body.size;
   let gender = req.body.gender;
   let age = req.body.age;
   
-  let params = [image.breed.name.size.gender.age];
+  let params = [image,breed,name,size,gender,age];
   connection.query(sql,params,
     (err,rows, fields)=>{
       res.send(rows);

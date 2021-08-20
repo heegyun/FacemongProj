@@ -20,12 +20,12 @@ class CustomerAdd extends React.Component{
         super(props);
         this.state = {
             file : null, 
-            breed : "",
-            name : "",
-            size : "",
-            gender : "",
-            age : "",
-            fileName : "" ,
+            breed : '',
+            name : '',
+            size : '',
+            gender : '',
+            age : '',
+            fileName : '' ,
             open : false
         }
 
@@ -41,12 +41,12 @@ class CustomerAdd extends React.Component{
 
         this.setState({
             file:null,
-            breed : "",
-            name : "",
-            size : "",
-            gender : "",
-            age : "",
-            fileName : "" ,
+            breed : '',
+            name : '',
+            size : '',
+            gender : '',
+            age : '',
+            fileName : '' ,
             open : false
         })
        
@@ -61,7 +61,7 @@ class CustomerAdd extends React.Component{
     
     handleValueChange = (e) =>{
         let nextState = {};
-        nextState[e.target.name] = e.target.name;
+        nextState[e.target.name] = e.target.value;
         this.setState(nextState);
 
     }
@@ -93,12 +93,12 @@ class CustomerAdd extends React.Component{
     handleClose = () =>{
         this.setState({
             file:null,
-            breed : "",
-            name : "",
-            size : "",
-            gender : "",
-            age : "",
-            fileName : "" ,
+            breed : '',
+            name : '',
+            size : '',
+            gender : '',
+            age : '',
+            fileName : '' ,
             open : false
 
         })
